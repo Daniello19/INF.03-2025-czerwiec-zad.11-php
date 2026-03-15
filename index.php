@@ -9,11 +9,15 @@
 <body>
     <main>
         <article></article>
-        <section id="sect1"></section>
-        <section id="sect2"></section>
+        <section id="sect1">
+            <h2>Opona dnia</h2>
+        </section>
+        <section id="sect2">
+            <h2>Najnowsze zamówienie</h2>
+        </section>
     </main>
     <footer>
-
+        <p>Stronę wykonał: 00000000000</p>
     </footer>
 </body>
 </html>
