@@ -64,3 +64,7 @@
     </footer>
 </body>
 </html>
+
+<?php 
+    header('refresh: 10');
+?>
