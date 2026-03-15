@@ -4,11 +4,11 @@ SELECT * FROM `opony` ORDER BY cena ASC LIMIT 10;
 
 Zapytanie 2: wybierające jedynie producenta, model, sezon i cenę opony o numerze katalogowym 9
 
-
+SELECT producent, model, sezon, cena FROM `opony` WHERE nr_kat = 9
 
 Zapytanie 3: wybierające jedynie identyfikator zamówienia i ilość oraz odpowiadające im model i cenę opony. Wybierany jest tylko jeden losowy rekord. Należy zastosować relację
 
-
+SELECT zamowienie.id_zam, zamowienie.ilosc, opony.model, opony.cena FROM `zamowienie` INNER JOIN opony ON zamowienie.nr_kat = opony.nr_kat ORDER BY RAND() LIMIT 1;
 
 Zapytanie 4: aktualizujące cenę opon letnich obniżając ją o 25%
 
