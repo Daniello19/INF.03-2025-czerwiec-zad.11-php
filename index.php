@@ -1,3 +1,17 @@
+<?php 
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "oponeum";
+
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Not connected: " . $conn->connect_error);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +22,11 @@
 </head>
 <body>
     <main>
-        <article></article>
+        <article>
+            <?php 
+            
+            ?>
+        </article>
         <section id="sect1">
             <h2>Opona dnia</h2>
         </section>
