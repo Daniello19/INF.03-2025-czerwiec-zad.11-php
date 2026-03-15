@@ -24,7 +24,7 @@
     <main>
         <article>
             <?php 
-                $sql = "SELECT * FROM opony";
+                $sql = "SELECT * FROM `opony` ORDER BY cena ASC LIMIT 10;";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -53,7 +53,18 @@
             ?>
         </article>
         <section id="sect1">
+            <img src="opona.png" alt="Opona">
             <h2>Opona dnia</h2>
+            <?php 
+                $sql = "SELECT producent, model, sezon, cena FROM `opony` WHERE nr_kat = 9";
+                $result = $conn->query($sql);
+                $opona = $result->fetch_assoc();
+
+                echo "<h2>" . $opona["producent"] . " model " . $opona["model"] . "</h2>";
+                echo "<h2>Sezon" . $opona["sezon"] . "</h2>";
+                echo "<h2>Tylko" . $opona["cena"] . "zł</h2>";
+
+            ?>
         </section>
         <section id="sect2">
             <h2>Najnowsze zamówienie</h2>
