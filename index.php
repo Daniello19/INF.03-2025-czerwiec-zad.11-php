@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "oponeum";
+    $dbname = "opony";
 
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,7 +24,32 @@
     <main>
         <article>
             <?php 
-            
+                $sql = "SELECT * FROM opony";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        if ($row["sezon"] == "letnia") {
+                            echo "<figure class='opona'>";
+                            echo "<img src='lato.png' alt='letnia'>";
+                            echo "<h4>Opona: " . $row["producent"] . " " . $row["model"] . "</h4>";
+                            echo "<h3>Opona: " . $row["cena"] . "</h3>";
+                            echo "</figure>";
+                        } elseif ($row["sezon"] == "zimowa") {
+                            echo "<figure class='opona'>";
+                            echo "<img src='zima.png' alt='zimowa'>";
+                            echo "<h4>Opona: " . $row["producent"] . " " . $row["model"] . "</h4>";
+                            echo "<h3>Opona: " . $row["cena"] . "</h3>";
+                            echo "</figure>";
+                        } elseif ($row["sezon"] == "uniwersalna") {
+                            echo "<figure class='opona'>";
+                            echo "<img src='uniwer.png' alt='uniwersalna'>";
+                            echo "<h4>Opona: " . $row["producent"] . " " . $row["model"] . "</h4>";
+                            echo "<h3>Opona: " . $row["cena"] . "</h3>";
+                            echo "</figure>";
+                        }
+                    }
+                }
             ?>
         </article>
         <section id="sect1">

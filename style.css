@@ -29,6 +29,10 @@ article {
     width: 40%;
     height: 600px;
     background-color: #C5CAE9;
+    max-height: 600px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .opona {
