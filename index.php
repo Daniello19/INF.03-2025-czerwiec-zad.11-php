@@ -68,6 +68,15 @@
         </section>
         <section id="sect2">
             <h2>Najnowsze zamówienie</h2>
+            <?php 
+                $sql = "SELECT zamowienie.id_zam, zamowienie.ilosc, opony.model, opony.cena FROM `zamowienie` INNER JOIN opony ON zamowienie.nr_kat = opony.nr_kat ORDER BY RAND() LIMIT 1;";
+                $result = $conn->query($sql);
+                $opona = $result->fetch_assoc();
+                $oponaWartosc = $opona["cena"] * $opona["ilosc"];
+
+                echo "<h2>" . $opona["id_zam"] . " " . $opona["ilosc"] . " sztuki modelu " . $opona["model"] . "</h2>";
+                echo "<h2>Wartość zamówiena " . $oponaWartosc . "zł</h2>";
+            ?>
         </section>
     </main>
     <footer>
