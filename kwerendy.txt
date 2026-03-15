@@ -12,4 +12,4 @@ SELECT zamowienie.id_zam, zamowienie.ilosc, opony.model, opony.cena FROM `zamowi
 
 Zapytanie 4: aktualizujące cenę opon letnich obniżając ją o 25%
 
-
+UPDATE opony SET cena = cena * 1.25 WHERE sezon = 'letnia'
